@@ -4,9 +4,9 @@ provider "google" {
   credentials = "./credentials.json"
 }
 
-# module "cloudrun2" {
-#   source = "./modules/cloudrun2"
-# }
+module "cloudrun2" {
+  source = "./modules/cloudrun2"
+}
 
 # module "cloudsql" {
 #   source = "./modules/cloudsql"
@@ -26,19 +26,19 @@ provider "google" {
 #   to = google_artifact_registry_repository.sample2
 # }
 
-module "buckets" {
-  source = "./modules/loop"
+# module "buckets" {
+#   source = "./modules/loop"
 
-  buckets = {
-    "bucket1" = {
-      region = "us-central1"
-    },
-    "bucket2" = {
-      region = "asia-northeast1",
-      age   = 30
-      lifecycle_rule = {
-        age = 60
-      }
-    },
-  }
-}
+#   buckets = {
+#     "bucket1" = {
+#       region = "us-central1"
+#     },
+#     "bucket2" = {
+#       region = "asia-northeast1",
+#       age   = 30
+#       lifecycle_rule = {
+#         age = 60
+#       }
+#     },
+#   }
+# }
